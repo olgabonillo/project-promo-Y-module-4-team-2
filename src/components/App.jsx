@@ -110,7 +110,12 @@ function App() {
   return (
     <div className="body">
       <Header />
-
+      <Routes>
+        <Route
+          path="/home"
+          element={<Home/>}
+        />
+      </Routes>
       <Hero />
       <main className="main">
         <div className="card-column">
@@ -126,12 +131,7 @@ function App() {
             handleAuthorImg={handleAuthorImg}
           />
         </div>
-        <Routes>
-        <Route
-          path="/home"
-          element={<Home/>}
-        />
-      </Routes>
+        
       </main>
 
       <Footer />
