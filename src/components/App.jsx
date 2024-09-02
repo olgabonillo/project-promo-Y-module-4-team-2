@@ -110,7 +110,12 @@ function App() {
   return (
     <div className="body">
       <Header />
-
+      <Routes>
+        <Route
+          path="/home"
+          element={<Home/>}
+        />
+      </Routes>
       <Hero />
       <main className="main">
         <div className="card-column">
