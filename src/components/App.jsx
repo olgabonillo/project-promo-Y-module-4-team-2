@@ -6,6 +6,8 @@ import Preview from "./Preview";
 import Card from "./Card";
 import Form from "./Form";
 import Footer from "./Footer";
+import Home from "../pages/Home";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [form, setForm] = useState({
@@ -124,6 +126,12 @@ function App() {
             handleAuthorImg={handleAuthorImg}
           />
         </div>
+        <Routes>
+        <Route
+          path="/home"
+          element={<Home/>}
+        />
+      </Routes>
       </main>
 
       <Footer />
