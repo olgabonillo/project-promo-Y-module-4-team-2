@@ -127,11 +127,8 @@ function App() {
           />
         </div>
         <Routes>
-        <Route
-          path="/home"
-          element={<Home/>}
-        />
-      </Routes>
+          <Route path="/home" element={<Home />} />
+        </Routes>
       </main>
 
       <Footer />
