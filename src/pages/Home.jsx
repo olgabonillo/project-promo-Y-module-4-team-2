@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
+import Hero from "../components/Hero";
 import Preview from "../components/Preview";
 import Card from "../components/Card";
 import Form from "../components/Form";
@@ -82,6 +82,8 @@ function Home() {
   };
 
   return (
+    <>
+    <Hero />
     <main className="main">
       <div className="card-column">
         <Preview src={projectImage} />
@@ -97,6 +99,7 @@ function Home() {
         />
       </div>
     </main>
+    </>
   );
 }
 

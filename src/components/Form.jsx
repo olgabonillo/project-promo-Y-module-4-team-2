@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Form({
   form,
   handleInput,
@@ -144,8 +146,7 @@ function Form({
           onChange={handleAuthorImg}
         />
       </fieldset>
-      <input type="submit" value="Guardar proyecto"  className="button--large"/>
-          
+       <Link to="/project-promo-Y-module-3-team-2/detail" type="submit" value="Guardar proyecto"  className="button--large"> Crear Proyecto</Link>  
       </form>
 
   )

@@ -1,4 +1,5 @@
 import title from "../images/title2.png";
+import { Link } from "react-router-dom";
 
 
 function Hero() {
@@ -8,9 +9,10 @@ function Hero() {
         <p className="hero__text">
           Escaparate en línea para recoger ideas a través de la tecnología
         </p>
-        <a className="button--link" href="./">
+        <Link to="/project-promo-Y-module-3-team-2/home" type="submit" value="nuevo proyecto"  className="button--large">Nuevo Proyecto</Link>
+        {/* <a className="button--link" href="./">
           Ver proyectos
-        </a>
+        </a> */}
         </div>
     )
 }

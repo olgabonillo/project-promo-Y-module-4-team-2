@@ -1,6 +1,5 @@
 import "../scss/App.scss";
 import Header from "./Header";
-import Hero from "./Hero";
 import Footer from "./Footer";
 import Home from "../pages/Home";
 import Detail from "../pages/Detail";
@@ -33,8 +32,7 @@ function App() {
   return (
     <div className="body">
       <Header />
-      <Hero />
-
+     
       <Routes>
         <Route path="/project-promo-Y-module-3-team-2/" element={<Landing />} />
 
