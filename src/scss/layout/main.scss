@@ -405,6 +405,7 @@
   color: var(--color-white);
   font: var(--font-button);
   text-decoration: none;
+  font-size: small;
 
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -450,13 +451,14 @@
 
 .button--large {
   display: block;
-  width: 145px;
+  width: 150px;
 
   margin-inline: auto;
   margin-block: 8px;
-  padding: 5px 18px;
+  padding: 8px 18px;
   color: var(--color-white);
-  font: var(--font-button);
+  font-size: small;
+  font-size: 15px;
   text-transform: none;
   text-decoration: none;
   text-align: center;
@@ -492,4 +494,14 @@
 
 .icon__github {
   background-image: url("../../images/icons/github.svg");
+}
+.grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 50px;
+  .card {
+    margin-left: 100px;
+    margin-bottom: 100px;
+  }
 }
