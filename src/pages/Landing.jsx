@@ -2,7 +2,8 @@ import React from "react";
 import Hero from "../components/Hero";
 import ImageOne from "../images/foto-3.jpg";
 import ImageTwo from "../images/foto-4.jpg";
-import ImageThree from "../images/foto-2.jpg";<q></q>
+import ImageThree from "../images/foto-2.jpg";
+<q></q>;
 import ImageFour from "../images/foto-1.png";
 
 function Landing() {
@@ -92,9 +93,9 @@ function Landing() {
                 el punto de vista integral, donde el afecto y el cariño juegan
                 un papel determinante en la cotidianidad de los mayores,
                 haciéndoles participes de la vida del Centro, mediante su
-                implicación en las actividades de ocio, no solo como
-                distracción sino como terapia para mantener sus capacidades
-                físicas y cognitivas en las mejores condiciones posibles.
+                implicación en las actividades de ocio, no solo como distracción
+                sino como terapia para mantener sus capacidades físicas y
+                cognitivas en las mejores condiciones posibles.
               </p>
 
               <div class="card__technicalInfo">
@@ -181,7 +182,7 @@ function Landing() {
           <article class="card">
             <h2 class="card__projectTitle">
               <span class="card__projectTitle--text">
-                Personal project card
+                tarjeta de proyecto personal
               </span>
             </h2>
 
