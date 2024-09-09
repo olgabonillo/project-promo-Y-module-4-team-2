@@ -40,6 +40,8 @@ function Landing() {
                 40 años. Llevamos a cabo nuestro propio proyecto educativo con
                 una metodología basada en el juego y en actividades de pedagogía
                 activa adaptada al nivel madurativo de cada niño o niña.
+                En esta escuela los niños crecen felices ya que nuestra principal
+                es hacer felices a los más pequeños.
               </p>
 
               <div class="card__technicalInfo">
