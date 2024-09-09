@@ -42,6 +42,8 @@ function Landing() {
                 activa adaptada al nivel madurativo de cada niño o niña.
                 En esta escuela los niños crecen felices ya que nuestra principal
                 es hacer felices a los más pequeños.
+                También trabajamos con el método montesori, ya que pensamos que los 
+                niños crecen de una forma más independiente al trabajar con dicho método.
               </p>
 
               <div class="card__technicalInfo">
