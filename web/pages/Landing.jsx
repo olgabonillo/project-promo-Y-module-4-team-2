@@ -252,9 +252,6 @@ function Landing() {
       </header>
     </>
   );
-<<<<<<< HEAD
-=======
 
->>>>>>> 2a12c05f2eb3963df27cac3d37d98f44505a0821
 
 export default Landing;

@@ -2,8 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
 
-
-<<<<<<< HEAD
 const projects = [
   {
     "name":"",
@@ -16,8 +14,6 @@ const projects = [
     "photo":""
   }
 ]
-=======
->>>>>>> 92b07a311ae462abd062b4146f686015aa969686
 // crear el servidor web
 const server = express();
 
@@ -48,7 +44,7 @@ server.listen(port, () => {
 server.get ('/projects', async (_req, res) => {
 
   const connection = await getDBConnection();
-  const sqlQuery = "SELECT * FROM freedb_ProyectosMolones.proyectos LIMIT 4";
+  const sqlQuery = "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id LIMIT 4;";
   const [projectsResult] = await connection.query(sqlQuery);
   connection.end();
   res.json({
