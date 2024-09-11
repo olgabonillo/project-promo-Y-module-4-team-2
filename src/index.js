@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
 
-
 // crear el servidor web
 const server = express();
 
@@ -32,11 +31,11 @@ server.listen(port, () => {
   console.log("Server is running on port " + port);
 });
 
-server.get ('/projects', async (req, res) => {
+server.get('/projects', async (req, res) => {
   //try para errores 
   try {
     const connection = await getDBConnection();
-    const sqlQuery = "SELECT * FROM freedb_ProyectosMolones.proyectos LIMIT 4";
+    const sqlQuery = "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id LIMIT 4;";
     const [projectsResult] = await connection.query(sqlQuery);
     await connection.end();
 
@@ -55,7 +54,7 @@ server.get ('/projects', async (req, res) => {
 });
 
 // endpoint para recibir los datos del formulario
-server.post ("/projects", async(req, res) => {
+server.post("/projects", async(req, res) => {
 
   const connection = await getDBConnection();
   const params = req.body;
@@ -78,9 +77,3 @@ const [projects] = await connection.query(query, [
 // Ejemplo query:
 
 // SELECT * FROM proyectos INNER JOIN autor ON proyectos.fk_autor_id=autor.id ORDER BY proyectos.id DESC LIMIT 4;
-
-
-server.get('/project/:id', (req, res) => {
-
-});
-
