@@ -9,7 +9,8 @@ const projects = [
     "repo":"",
     "demo":"",
     "autor":"",
-    "job":""
+    "job":"",
+    "photo":""
   }
 ]
 // crear el servidor web
