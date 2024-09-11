@@ -252,6 +252,6 @@ function Landing() {
       </header>
     </>
   );
-}
+
 
 export default Landing;
