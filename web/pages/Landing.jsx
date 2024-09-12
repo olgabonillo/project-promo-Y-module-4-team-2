@@ -6,7 +6,7 @@ function Landing() {
   const [projects, setProjects] = useState([]);
 
   async function getProjects() {
-    // El fetch con try-catch para errores y
+    // El fetch con try-catch para errores 
     try {
       const response = await fetch("http://localhost:5002/projects");
 
