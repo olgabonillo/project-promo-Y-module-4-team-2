@@ -9,6 +9,8 @@ const server = express();
 server.use(cors());
 
 server.use(express.json());
+server.set('view engine', 'ejs');
+
 
 async function getDBConnection() {
   const connection = await mysql.createConnection({
@@ -71,8 +73,12 @@ const [projects] = await connection.query(query, [
   res.json({
     status: "success",
     result : projects,
+    cardurl://url de la pagina del motor de plantilla,
   });
 });
+
+
+//agregar el servidor estatico 
 
 // Ejemplo query:
 
