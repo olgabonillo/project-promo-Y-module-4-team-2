@@ -73,7 +73,7 @@ const [projects] = await connection.query(query, [
   res.json({
     status: "success",
     result : projects,
-    cardurl://url de la pagina del motor de plantilla,
+    //cardurl: url de la pagina del motor de plantilla,
   });
 });
 
