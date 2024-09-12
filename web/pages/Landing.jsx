@@ -8,7 +8,7 @@ function Landing() {
   async function getProjects() {
     // El fetch con try-catch para errores 
     try {
-      const response = await fetch("http://localhost:5002/projects");
+      const response = await fetch("http://localhost:5000/projects");
 
       if (response.ok) {
         const datos = await response.json();
@@ -43,14 +43,14 @@ function Landing() {
 
               <div class="card__author">
                 <div class="card__authorPhoto">
-                  <img src={project.photo} />
+                  <img src={project.image} />
                 </div>
                 <p class="card__job">{project.job}</p>
                 <h3 class="card__name">{project.name}</h3>
               </div>
 
               <div class="card__project">
-                <h3 class="card__name">{project.projectName}</h3>
+                <h3 class="card__name">{project.proyectName}</h3>
                 <p class="card__slogan">
                   {project.slogan}
                 </p>
@@ -64,14 +64,14 @@ function Landing() {
 
                   <a
                     class="icon icon__www"
-                    href={project.web}
+                    href={project.demo}
                     title="Haz click para ver el proyecto online"
                   >
                     Web link
                   </a>
                   <a
                     class="icon icon__github"
-                    href="#"
+                    href={project.github}
                     title="Haz click para ver el código del proyecto"
                   >
                     GitHub link
