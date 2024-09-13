@@ -39,7 +39,7 @@ server.get('/projects', async (req, res) => {
     const connection = await getDBConnection();
     const sqlQuery = "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id LIMIT 4;";
     const [projectsResult] = await connection.query(sqlQuery);
-    connection.end();
+    await connection.end();
 
     res.json({
       success: true,
@@ -73,6 +73,7 @@ const [projects] = await connection.query(query, [
   res.json({
     status: "success",
     result : projects,
+    cardurl://url de la pagina del motor de plantilla,
   });
 });
 
