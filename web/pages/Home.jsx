@@ -35,16 +35,31 @@ function Home() {
     form.image =
       "https://static.wikia.nocookie.net/minion/images/3/34/Los_Minions.jpg/revision/latest?cb=20240201133153&path-prefix=es";
 
-    fetch("https://dev.adalab.es/api/projectCard", {
+    fetch("http://localhost:5002/projects", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        "name":form.autor,
+        "job": form.job,
+        "photo":form.photo,
+        "proyectName": form.name,
+        "description": form.desc,
+        "slogan":form.slogan,
+        "tecnologies": form.technologies, 
+        "image":form.image,
+        "github":form.repo,
+        "demo":form.demo
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        // TODO: Mostrar un link con la ruta data.result.cardUrl;
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 

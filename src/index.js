@@ -27,7 +27,7 @@ async function getDBConnection() {
 }
 
 // establecer el puerto de conexión
-const port = 5000;
+const port = 5002;
 
 server.listen(port, () => {
   console.log("Server is running on port " + port);
@@ -55,35 +55,53 @@ server.get('/projects', async (req, res) => {
   }
 });
 
-// endpoint para recibir los datos del formulario
+// endpoint para añadir un nuevo proyecto 
 server.post("/projects", async(req, res) => {
+  try {
+    const connection = await getDBConnection();
+    const params = req.body;
+    const autorQuerySQL = "INSERT INTO autor (name, job, photo) VALUES(?, ?, ?)";
+    const [autorResult] = await connection.query(autorQuerySQL, [
+      params.name,
+      params.job,
+      params.photo,
+    ]);
 
-  const connection = await getDBConnection();
-  const params = req.body;
-  
- console.log(params);
+    const newAutor = autorResult.insertId;
+    const projectQuerySQL =  "INSERT INTO proyectos (proyectName, description, slogan, tecnologies, image, github, demo, fk_autor_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+    const [projectResult] = await connection.query(projectQuerySQL, [
+      params.proyectName,
+      params.description,
+      params.slogan,
+      params.tecnologies,
+      params.image,
+      params.github,
+      params.demo,
+      newAutor
+    ]);
 
-const query = "INSERT INTO autor (name, job, photo) VALUES(?, ?, ?)";
-const [projects] = await connection.query(query, [
-  params.name,
-  params.job,
-  params.photo
-]);
-  await connection.end();
-  res.json({
-    status: "success",
-    result : projects,
-    cardurl://url de la pagina del motor de plantilla,
-  });
+    connection.end();
+    res.json({
+      status: "success",
+      result : projectResult,
+      cardUrl: `//localhost:5002/projects/${projectResult.insertId}`,
+    });
+  } catch (e) {
+    res.status(500);
+    res.json({
+      success: false,
+      error: e,
+    });
+  }
 });
 
+//para renderizar la tarjeta con motores de plantillas.
+server.get('/projects/:id', async (req, res) => {
+  res.send('Project ' + req.params.id);
+});
 
 //agregar el servidor estatico
  
 const staticServer = "./src/public-react";
 server.use(express.static(staticServer));
 
-
-// Ejemplo query:
-
-// SELECT * FROM proyectos INNER JOIN autor ON proyectos.fk_autor_id=autor.id ORDER BY proyectos.id DESC LIMIT 4;

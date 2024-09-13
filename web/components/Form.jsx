@@ -146,7 +146,8 @@ function Form({
           onChange={handleAuthorImg}
         />
       </fieldset>
-       <Link to="/project-promo-Y-module-3-team-2/detail" type="submit" value="Guardar proyecto"  className="button--large"> Crear Proyecto</Link>  
+       {/*<Link to="/project-promo-Y-module-3-team-2/detail" type="submit" value="Guardar proyecto" className="button--large"> Crear Proyecto</Link>*/}
+       <button type="submit" className="button--large">Crear Proyecto</button>
       </form>
 
   )

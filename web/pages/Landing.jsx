@@ -60,7 +60,7 @@ function Landing() {
                 </p>
 
                 <div className="card__technicalInfo">
-                  <p className="card__technologies">{project.technologies}</p>
+                  <p className="card__technologies">{project.tecnologies}</p>
 
                   <a
                     className="icon icon__www"
