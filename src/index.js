@@ -96,8 +96,13 @@ server.post("/projects", async(req, res) => {
 });
 
 //para renderizar la tarjeta con motores de plantillas.
-server.get('/projects/:id', async (req, res) => {
-  res.send('Project ' + req.params.id);
+server.get('/detail/:id', async (req, res) => {
+  const connection = await getDBConnection();
+  const id = req.params.id;
+  const sqlQuery = "SELECT * FROM proyectos, autor where proyectos.id = ? and proyectos.fk_autor_id = autor.id;";
+  const [result] = await connection.query(sqlQuery, [id]);
+  connection.end();
+  res.render("detail", {result: result[0]});
 });
 
 //agregar el servidor estatico
