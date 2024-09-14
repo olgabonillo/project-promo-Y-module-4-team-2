@@ -84,7 +84,7 @@ server.post("/projects", async(req, res) => {
     res.json({
       status: "success",
       result : projectResult,
-      cardUrl: `//localhost:5002/projects/${projectResult.insertId}`,
+      cardUrl: `//localhost:5002/detail/${projectResult.insertId}`,
     });
   } catch (e) {
     res.status(500);

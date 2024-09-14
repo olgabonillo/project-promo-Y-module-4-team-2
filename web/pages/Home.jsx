@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Preview from "../components/Preview";
 import Card from "../components/Card";
 import Form from "../components/Form";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [form, setForm] = useState({
@@ -18,6 +19,8 @@ function Home() {
     image: "",
     photo: "",
   }); //objeto
+
+  const [cardUrl, setCardUrl] = useState(null);
 
   useEffect(() => {
     const localStorageForm = localStorage.getItem("form");
@@ -56,7 +59,7 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        // TODO: Mostrar un link con la ruta data.result.cardUrl;
+        setCardUrl(data.cardUrl);
       })
       .catch((error) => {
         console.log(error);
@@ -103,6 +106,8 @@ function Home() {
       <div className="card-column">
         <Preview src={projectImage} />
         <Card form={form} authorImage={authorImage} />
+        {/* URLCARD */}
+        {cardUrl && <Link to={cardUrl} target="_blank">Tu tarjeta se ha creado con éxito</Link>} 
       </div>
       <div>
         <Form
@@ -113,6 +118,7 @@ function Home() {
           handleAuthorImg={handleAuthorImg}
         />
       </div>
+      
     </main>
     </>
   );
