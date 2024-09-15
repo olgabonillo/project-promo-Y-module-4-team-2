@@ -38,7 +38,7 @@ function Home() {
     form.image =
       "https://static.wikia.nocookie.net/minion/images/3/34/Los_Minions.jpg/revision/latest?cb=20240201133153&path-prefix=es";
 
-    fetch("http://localhost:5002/projects", {
+    fetch("http://localhost:5000/projects", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

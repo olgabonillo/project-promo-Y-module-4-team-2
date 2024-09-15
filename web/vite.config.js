@@ -5,8 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "./docs",
+    outDir: "../src/public-react",
     emptyOutDir: true,
   },
-  base: "/project-promo-Y-module-3-team-2/"
 })
