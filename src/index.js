@@ -27,7 +27,7 @@ async function getDBConnection() {
 }
 
 // establecer el puerto de conexión
-const port = 5000;
+const port = 5002;
 
 server.listen(port, () => {
   console.log("Server is running on port " + port);
@@ -73,7 +73,7 @@ const [projects] = await connection.query(query, [
   res.json({
     status: "success",
     result : projects,
-    cardurl://url de la pagina del motor de plantilla,
+    //cardurl://url de la pagina del motor de plantilla,
   });
 });
 
