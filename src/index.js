@@ -112,3 +112,6 @@ server.get("/detail/:id", async (req, res) => {
 
 const staticServer = "./src/public-react";
 server.use(express.static(staticServer));
+
+const styleServer = "./src/public-css";
+server.use(express.static(styleServer));

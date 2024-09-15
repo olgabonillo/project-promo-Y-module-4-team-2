@@ -1,0 +1,237 @@
+.body {
+    background: var(--color-dusk);
+  }
+  
+  :root {
+    /* // font: var(--font-normal); /* font-size: 10px; */ 
+    color: var(--color-white);
+  }
+  
+  /* //Media queries */
+  @media (min-width: 1024px) {
+    .grid-wrap {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    :root {
+      font-size: 18px;
+    }
+    .grid-wrap {
+      grid-template-columns: 1fr;
+    }
+  
+    .card__authorPhoto img {
+      width: 50px;
+      height: 50px;
+    }
+    .main {
+      max-width: 980px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 6fr 5fr;
+      gap: 2rem;
+    }
+  
+    .card-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+  
+  .container {
+    padding: 22px 22px 0 22px;
+    background-color: var(--color-dark);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+  
+  .header .header__brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 7px 5px;
+    gap: 7px;
+  }
+  
+  .header .header__companyLogo {
+    height: 7rem;
+    color: var(--color-white);
+  }
+  
+  .header .header__title {
+    font-family: "PT Serif", serif;
+    text-transform: capitalize;
+    color: var(--color-white);
+    font-size: small;
+  }
+  
+  .hero {
+    margin-bottom: 100px;
+  
+    .titlecontainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+ /*  // // .hero .title {
+  // //   font: var(--font-title-brand);
+  // //   margin-bottom: 8px;
+  // //   font-weight: bold;
+  // } */
+  
+  .hero .hero__text {
+    font-family: "PT Serif", serif;
+    text-align: center;
+    margin-inline: 4rem;
+    margin-bottom: 1.8rem;
+    font-size: 20px;
+  }
+  
+  .projectImage {
+    display: block;
+    width: calc(100% - 20px);
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .preview .card {
+    margin-inline: 20px;
+  }
+  
+  .card {
+    color: var(--color-black);
+    font-family: "PT Serif", serif;
+    box-shadow: 20px -10px 10px #547ba46d, -20px 10px 10px #547ba49b;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(
+      to bottom,
+      var(--color-white) 0%,
+      rgba(0, 0, 0, 0)
+    );
+    border-image-slice: 1;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-white),
+        var(--color-white)
+      ),
+      linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+  
+  .card .card__projectTitle {
+    grid-column: 2;
+    position: relative;
+    margin: 15px 10px 1rem 0;
+    text-align: center;
+    text-transform: none;
+  
+    font-family: "Playwrite BE WAL", serif;
+  }
+  
+  .card card__projectTitle::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    bottom: calc(50% - 1px);
+    left: 0;
+    right: 0;
+    z-index: 0;
+  
+    background-image: linear-gradient(
+      to right,
+      white,
+      #232323 15%,
+      var(--color-black),
+      #232323 85%,
+      white
+    );
+  }
+  
+  .card .card__projectTitle--text {
+    position: relative;
+    font-size: 16px;
+    padding-inline: 0.1em;
+    z-index: 1;
+    background-color: var(--color-white);
+  }
+  
+  .card .card__author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .card .card__authorPhoto {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .card .card__job {
+    margin-bottom: 0.2rem;
+  }
+  
+  .card .card__name {
+    font-family: "PT Serif", serif;
+    margin-bottom: 0.2rem;
+  }
+  
+  .card .card__project {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+  
+  .card .card__slogan {
+    font-family: "PT Serif", serif;
+    margin-top: -0.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .card .card__descriptionTitle {
+    font-weight: inherit;
+    text-transform: capitalize;
+  }
+  
+  .card .card__technicalInfo {
+    display: grid;
+    grid-template-columns: 1fr 1.3rem 1.3rem;
+    gap: 0.5em;
+  
+    margin-block: 1.8rem;
+  }
+  
+  .card .card__technologies {
+    font-family: "PT Serif", serif;
+  }
