@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Preview from "../components/Preview";
 import Card from "../components/Card";
 import Form from "../components/Form";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [form, setForm] = useState({
@@ -18,6 +19,8 @@ function Home() {
     image: "",
     photo: "",
   }); //objeto
+
+  const [cardUrl, setCardUrl] = useState(null);
 
   useEffect(() => {
     const localStorageForm = localStorage.getItem("form");
@@ -35,16 +38,31 @@ function Home() {
     form.image =
       "https://static.wikia.nocookie.net/minion/images/3/34/Los_Minions.jpg/revision/latest?cb=20240201133153&path-prefix=es";
 
-    fetch("https://dev.adalab.es/api/projectCard", {
+    fetch("http://localhost:5002/projects", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        "name":form.autor,
+        "job": form.job,
+        "photo":form.photo,
+        "proyectName": form.name,
+        "description": form.desc,
+        "slogan":form.slogan,
+        "tecnologies": form.technologies, 
+        "image":form.image,
+        "github":form.repo,
+        "demo":form.demo
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setCardUrl(data.cardUrl);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -88,6 +106,8 @@ function Home() {
       <div className="card-column">
         <Preview src={projectImage} />
         <Card form={form} authorImage={authorImage} />
+        {/* URLCARD */}
+        {cardUrl && <Link to={cardUrl} target="_blank">Tu tarjeta se ha creado con éxito</Link>} 
       </div>
       <div>
         <Form
@@ -98,6 +118,7 @@ function Home() {
           handleAuthorImg={handleAuthorImg}
         />
       </div>
+      
     </main>
     </>
   );

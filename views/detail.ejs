@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/public-css/main.css">
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <main>
+    
+<section className="preview">
+    <article className="card">
+      <h2 className="card__projectTitle">
+        <span className="card__projectTitle--text">
+          tarjeta de proyecto personal
+        </span>
+      </h2>
+
+      <div className="card__author">
+        <div className="card__authorPhoto"><img src=<%= result.authorImage %>/></div>
+        <p className="card__job"><%= result.job %></p>
+        <h3 className="card__name"><%= result.autor %></h3>
+      </div>
+
+      <div className="card__project">
+        <h3 className="card__name"><%= result.name %></h3>
+        <p className="card__slogan"><%= result.slogan %></p>
+        <h3 className="card__descriptionTitle">Descripción del producto:</h3>
+        <p className="card__description">
+          <%= result.desc %>
+        </p>
+
+        <div className="card__technicalInfo">
+          <p className="card__technologies">React JS - HTML - CSS</p>
+
+          <a
+            className="icon icon__www"
+            href=<%= result.demo %>
+            target="_blank"
+            title="Haz click para ver el proyecto online"
+          >
+            Web link
+          </a>
+          <a
+            className="icon icon__github"
+            href=<%=result.repo %>
+            target="_blank"
+            title="Haz click para ver el código del proyecto"
+          >
+            GitHub link
+          </a> 
+         </div>
+      </div>
+    </article>
+  </section>
+    </main>
+  </body>
+</html>
+
