@@ -8,7 +8,7 @@ function Landing() {
   async function getProjects() {
     // El fetch con try-catch para errores
     try {
-      const response = await fetch("http://localhost:5002/projects");
+      const response = await fetch(`${import.meta.env.VITE_SERVER_DOMAIN}/projects`);
 
       if (response.ok) {
         const datos = await response.json();
@@ -67,14 +67,14 @@ function Landing() {
                       href={project.demo}
                       title="Haz click para ver el proyecto online"
                     >
-                      Web link
+                      Web
                     </a>
                     <a
                       className="icon icon__github"
                       href={project.github}
                       title="Haz click para ver el código del proyecto"
                     >
-                      GitHub link
+                      GitHub
                     </a>
                   </div>
                 </div>

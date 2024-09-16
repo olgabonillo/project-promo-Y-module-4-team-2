@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
-
+require("dotenv").config();
 // crear el servidor web
 const server = express();
 
@@ -26,7 +26,7 @@ async function getDBConnection() {
 }
 
 // establecer el puerto de conexión
-const port = 5002;
+const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
   console.log("Server is running on port " + port);
@@ -86,7 +86,7 @@ server.post("/projects", async (req, res) => {
     res.json({
       status: "success",
       result: projectResult,
-      cardUrl: `//localhost:5002/detail/${projectResult.insertId}`,
+      cardUrl: `${process.env.SERVER_DOMAIN}/detail/${projectResult.insertId}`,
     });
   } catch (e) {
     res.status(500);

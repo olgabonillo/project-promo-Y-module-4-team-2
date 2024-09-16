@@ -33,7 +33,7 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5002/projects", {
+    fetch(`${import.meta.env.VITE_SERVER_DOMAIN}/projects`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ function Home() {
         <Preview src={projectImage} />
         <Card form={form} authorImage={authorImage} />
         {/* URLCARD */}
-        {cardUrl && <Link to={cardUrl} target="_blank">Pincha aqui para ver tu tarjeta</Link>} 
+        {cardUrl && <Link to={cardUrl} target="_blank" className="card-url">Pincha aqui para ver tu tarjeta</Link>} 
       </div>
       <div>
         <Form
