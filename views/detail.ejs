@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/web/images/logo2.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,6 +35,7 @@
               <h3 class="card__name"><%= result.autor %></h3>
             </div>
 
+<<<<<<< HEAD
             <div class="card__project">
               <h3 class="card__name"><%= result.name %></h3>
               <p class="card__slogan"><%= result.slogan %></p>
@@ -43,6 +45,13 @@
           </div>
           <div class="card__technicalInfo">
             <p class="card__technologies">React JS - HTML - CSS</p>
+=======
+      <div class="card__author">
+        <div class="card__authorPhoto"><img src="<%= result.photo %>"/></div>
+        <p class="card__job"><%= result.job %></p>
+        <h3 class="card__name"><%= result.autor %></h3>
+      </div>
+>>>>>>> cd53496005db3c74ec5c2a0089df5654538a1f5b
 
             <a
               class="icon icon__www"

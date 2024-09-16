@@ -33,11 +33,6 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    form.photo =
-      "https://static.wikia.nocookie.net/minion/images/3/34/Los_Minions.jpg/revision/latest?cb=20240201133153&path-prefix=es";
-    form.image =
-      "https://static.wikia.nocookie.net/minion/images/3/34/Los_Minions.jpg/revision/latest?cb=20240201133153&path-prefix=es";
-
     fetch("http://localhost:5002/projects", {
       method: "POST",
       headers: {
@@ -46,12 +41,12 @@ function Home() {
       body: JSON.stringify({
         "name":form.autor,
         "job": form.job,
-        "photo":form.photo,
+        "photo":authorImage,
         "proyectName": form.name,
         "description": form.desc,
         "slogan":form.slogan,
         "tecnologies": form.technologies, 
-        "image":form.image,
+        "image":projectImage,
         "github":form.repo,
         "demo":form.demo
       }),
