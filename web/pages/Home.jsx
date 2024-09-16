@@ -33,7 +33,7 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5000/projects", {
+    fetch(`${import.meta.env.VITE_SERVER_DOMAIN}/projects`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
