@@ -516,3 +516,19 @@
     grid-template-columns: 1fr;
   }
 }
+
+.cardHelement {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 100%;
+}
+.card .card__technicalInfo{
+  display: flex;
+  justify-content: end;
+  margin-right: 65px;
+}
+.card .card__projectTitle{
+  text-align: end;
+  margin-right: 58px;
+}
