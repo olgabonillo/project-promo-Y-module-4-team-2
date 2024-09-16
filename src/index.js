@@ -105,6 +105,7 @@ server.get("/detail/:id", async (req, res) => {
     "SELECT * FROM proyectos, autor where proyectos.id = ? and proyectos.fk_autor_id = autor.id;";
   const [result] = await connection.query(sqlQuery, [id]);
   connection.end();
+  console.log(result);
   res.render("detail", { result: result[0] });
 });
 

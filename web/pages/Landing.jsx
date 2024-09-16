@@ -37,7 +37,7 @@ function Landing() {
             <div className="card">
                 <div className="card__author">
                   <div className="card__authorPhoto">
-                    <img src={project.image} />
+                    <img src={project.photo} />
                   </div>
                   <p className="card__job">{project.job}</p>
                   <h3 className="card__name">{project.name}</h3>
