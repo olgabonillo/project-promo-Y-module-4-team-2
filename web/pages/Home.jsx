@@ -102,7 +102,7 @@ function Home() {
         <Preview src={projectImage} />
         <Card form={form} authorImage={authorImage} />
         {/* URLCARD */}
-        {cardUrl && <Link to={cardUrl} target="_blank">Pincha aqui para ver tu tarjeta</Link>} 
+        {cardUrl && <Link to={cardUrl} target="_blank" className="card-url">Pincha aqui para ver tu tarjeta</Link>} 
       </div>
       <div>
         <Form
