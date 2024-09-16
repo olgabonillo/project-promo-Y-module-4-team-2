@@ -8,7 +8,7 @@ function Landing() {
   async function getProjects() {
     // El fetch con try-catch para errores
     try {
-      const response = await fetch("http://localhost:5002/projects");
+      const response = await fetch("http://localhost:5000/projects");
 
       if (response.ok) {
         const datos = await response.json();

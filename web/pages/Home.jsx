@@ -33,7 +33,7 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5002/projects", {
+    fetch("http://localhost:5000/projects", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
