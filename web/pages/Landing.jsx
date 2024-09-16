@@ -67,14 +67,14 @@ function Landing() {
                       href={project.demo}
                       title="Haz click para ver el proyecto online"
                     >
-                      Web link
+                      Web
                     </a>
                     <a
                       className="icon icon__github"
                       href={project.github}
                       title="Haz click para ver el código del proyecto"
                     >
-                      GitHub link
+                      GitHub
                     </a>
                   </div>
                 </div>
