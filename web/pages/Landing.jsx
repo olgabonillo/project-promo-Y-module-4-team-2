@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Landing() {
   const [projects, setProjects] = useState([]);
@@ -29,7 +30,7 @@ function Landing() {
   return (
     <>
       <Hero />
-
+      <Link  to="/home" type="submit" value="nuevo proyecto"  className="button--large button--link">Nuevo proyecto</Link>
       <header className="grid-wrap">
         {projects.map((project) => (
           <div className="preview" key={project.id}>
@@ -71,7 +72,7 @@ function Landing() {
                     </a>
                     <a
                       className="icon icon__github"
-                      href={project.github}
+                      href={project.gitHub}
                       title="Haz click para ver el código del proyecto"
                     >
                       GitHub

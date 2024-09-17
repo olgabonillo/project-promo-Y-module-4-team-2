@@ -26,7 +26,7 @@ async function getDBConnection() {
 }
 
 // establecer el puerto de conexión
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5002;
 
 server.listen(port, () => {
   console.log("Server is running on port " + port);
@@ -37,7 +37,7 @@ server.get("/projects", async (req, res) => {
   try {
     const connection = await getDBConnection();
     const sqlQuery =
-      "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id  and projects.id != 1";
+      "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id  and projects.id != 1;";
     const [projectsResult] = await connection.query(sqlQuery);
     await connection.end();
     console.log("projectsResult", projectsResult)
