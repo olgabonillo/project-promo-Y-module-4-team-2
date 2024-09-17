@@ -66,6 +66,7 @@ function Landing() {
                     <a
                       className="icon icon__www"
                       href={project.demo}
+                      target="_blank"
                       title="Haz click para ver el proyecto online"
                     >
                       Web
@@ -73,6 +74,7 @@ function Landing() {
                     <a
                       className="icon icon__github"
                       href={project.gitHub}
+                      target="_blank"
                       title="Haz click para ver el código del proyecto"
                     >
                       GitHub
