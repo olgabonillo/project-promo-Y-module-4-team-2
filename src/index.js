@@ -40,7 +40,7 @@ server.get("/projects", async (req, res) => {
       "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id  and projects.id != 1;";
     const [projectsResult] = await connection.query(sqlQuery);
     await connection.end();
-    console.log("projectsResult", projectsResult)
+    console.log("projectsResult", projectsResult);
     res.json({
       success: true,
       result: projectsResult,
@@ -106,7 +106,7 @@ server.get("/detail/:id", async (req, res) => {
   const [result] = await connection.query(sqlQuery, [id]);
   connection.end();
   console.log(result);
-  res.render("detail", { result: result[0] });
+  res.render("detail", { result: { ...result[0] } });
 });
 
 //agregar el servidor estatico

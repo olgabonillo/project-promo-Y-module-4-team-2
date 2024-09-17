@@ -1,5 +1,5 @@
-body{
-  background: rgb(78, 78, 201)
+body {
+  background: rgb(78, 78, 201);
 }
 
 :root {
@@ -114,7 +114,8 @@ body{
   background: white;
   color: var(--color-black);
   font-family: "PT Serif", serif;
-  box-shadow: 20px -10px 10px rgba(255, 192, 203, 0.456), -20px 10px 10px rgba(255, 192, 203, 0.522);
+  box-shadow: 20px -10px 10px rgba(255, 192, 203, 0.456),
+    -20px 10px 10px rgba(255, 192, 203, 0.522);
   border-radius: 20px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -243,13 +244,41 @@ body{
   text-align: end;
   margin-right: 58px;
 }
-.helement{
+.helement {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   height: 100%;
 }
-.card .card__projectTitle{
+.card .card__projectTitle {
   text-align: end;
   margin-right: 150px;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 var(--color-greyish-brown-two);
+}
+
+.icon__www {
+  background-image: url("../images/icons/globe-solid.svg");
+}
+
+.icon__github {
+  background-image: url("../images/icons/github.svg");
+}
+
+.detail-page .preview,
+.detail-page .projectImage {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.detail-page .card__job,
+.detail-page .card__name {
+  margin-top: 0;
 }

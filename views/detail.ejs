@@ -15,11 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+BE+WAL:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-  
+
     <title>Document</title>
   </head>
   <body>
-    <main>
+    <main class="detail-page">
+      <img class="projectImage" src="<%= result.image %>">
       <section class="preview">
         <div class="card">
           <h2 class="card__projectTitle">
@@ -32,12 +33,12 @@
               <div class="card__authorPhoto">
                 <img src="<%= result.photo %>" />
               </div>
+              <h3 class="card__name"><%= result.name %></h3>
               <p class="card__job"><%= result.job %></p>
               <h3 class="card__name"><%= result.autor %></h3>
             </div>
 
             <div class="card__project">
-              <h3 class="card__name"><%= result.name %></h3>
               <p class="card__slogan"><%= result.slogan %></p>
               <h3 class="card__descriptionTitle">Descripción del producto:</h3>
               <p class="card__description"><%= result.description %></p>
@@ -50,8 +51,9 @@
               href="<%= result.demo %>"
               target="_blank"
               title="Haz click para ver el proyecto online"
-              class="fa-brands fa-github">
-              Web 
+              class="fa-brands fa-github"
+            >
+              Web
             </a>
             <a
               class="icon icon__github"
@@ -59,7 +61,7 @@
               target="_blank"
               title="Haz click para ver el código del proyecto"
             >
-              GitHub 
+              GitHub
             </a>
           </div>
         </div>

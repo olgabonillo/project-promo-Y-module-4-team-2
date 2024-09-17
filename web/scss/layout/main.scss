@@ -68,6 +68,7 @@
     display: grid;
     grid-template-columns: 6fr 5fr;
     gap: 2rem;
+    margin-top: 50px;
   }
 
   .card-column {
@@ -109,7 +110,7 @@
 }
 
 .hero {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   .titlecontainer {
     width: 100%;
@@ -271,7 +272,7 @@
 }
 
 .card-url {
-  font:var(--font-title-brand);
+  font: var(--font-title-brand);
   font-size: 18px;
   padding: 20px;
   margin-top: 30px;
@@ -552,12 +553,12 @@
   align-items: center;
   height: 100%;
 }
-.card .card__technicalInfo{
+.card .card__technicalInfo {
   display: flex;
   justify-content: end;
   margin-right: 65px;
 }
-.card .card__projectTitle{
+.card .card__projectTitle {
   text-align: end;
   margin-right: 58px;
 }
