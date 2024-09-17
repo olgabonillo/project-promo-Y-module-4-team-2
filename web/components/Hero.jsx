@@ -9,7 +9,7 @@ function Hero() {
         <p className="hero__text">
           Escaparate en línea para recoger ideas a través de la tecnología
         </p>
-        <Link  to="/home" type="submit" value="nuevo proyecto"  className="button--large button--link">Nuevo Proyecto</Link>
+        <Link  to="/home" type="submit" value="nuevo proyecto"  className="button--large button--link">Nuevo proyecto</Link>
         {/* <a className="button--link" href="./">
           Ver proyectos
         </a> */}

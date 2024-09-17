@@ -37,10 +37,10 @@ server.get("/projects", async (req, res) => {
   try {
     const connection = await getDBConnection();
     const sqlQuery =
-      "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id LIMIT 4 OFFSET 1";
+      "SELECT * FROM freedb_ProyectosMolones.autor AS autor, freedb_ProyectosMolones.proyectos AS projects WHERE autor.id = projects.fk_autor_id  and projects.id != 1";
     const [projectsResult] = await connection.query(sqlQuery);
     await connection.end();
-
+    console.log("projectsResult", projectsResult)
     res.json({
       success: true,
       result: projectsResult,
