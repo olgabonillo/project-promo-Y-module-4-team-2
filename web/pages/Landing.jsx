@@ -30,7 +30,7 @@ function Landing() {
   return (
     <>
       <Hero />
-      <Link  to="/home" type="submit" value="nuevo proyecto"  className="button--large button--link">Nuevo proyecto</Link>
+      <Link  to="/home" type="submit" value="nuevo proyecto"  className="button--large button-project">Nuevo proyecto</Link>
       <header className="grid-wrap">
         {projects.map((project) => (
           <div className="preview" key={project.id}>
