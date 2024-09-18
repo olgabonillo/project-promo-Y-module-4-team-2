@@ -97,7 +97,7 @@ function Home() {
   return (
     <>
     <Hero />
-    <Link  to="/" type="submit" value="nuevo proyecto"  className="button--large button--link">Ver proyectos</Link>
+    <Link  to="/home" type="submit" value="nuevo proyecto"  className="button--large button--link">Ver proyectos</Link>
     <main className="main">
       <div className="card-column">
         <Preview src={projectImage} />
