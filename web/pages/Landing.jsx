@@ -51,7 +51,7 @@ function Landing() {
                     </span>
                   </h2>
                   <div>
-                    <h3 className="card__name">{project.proyectName}</h3>
+                    <h3 className="card__name">{project.name}</h3>
                     <p className="card__slogan">{project.slogan}</p>
                   </div>
                   <div>
